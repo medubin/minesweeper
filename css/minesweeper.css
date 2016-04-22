@@ -1,0 +1,28 @@
+li {
+  list-style: none;
+  width: 15px;
+  height: 15px;
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+  /*display: inline;*/
+  border: 1px solid black;
+  float: left;
+}
+
+.safe {
+  background-color: green;
+}
+.bomb {
+  background-color: red;
+}
+
+ul {
+  display: block;
+  margin: 0;
+  padding: 0px;
+  border: 0px;
+  /*height: 81px;*/
+  overflow: auto;
+  position: relative;
+}
