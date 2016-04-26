@@ -3,7 +3,7 @@ var Game = require('./minesweeper');
 
 $(function () {
   var $board = $("#board");
-  var game = new Game(10, 10);
+  var game = new Game(20, 50);
   new View($board, game);
 
 });

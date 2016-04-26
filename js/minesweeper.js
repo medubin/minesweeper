@@ -62,9 +62,25 @@ MineSweeper.prototype.checkSquare = function (pos) {
   return this.board[pos[0]][pos[1]];
 };
 
+MineSweeper.prototype._listOfNeighbors = function (pos) {
+  var neighbors = [];
+  for (var i = -1; i <= 1; i++) {
+    for (var j = -1; j <= 1; j++) {
+      if (this._validPos([pos[0] + i, pos[1] + j])) {
+        if (i !== 0 || j !== 0) neighbors.push ([pos[0] + i, pos[1] + j]);
+      }
+    }
+  }
+  return neighbors;
+};
+
+MineSweeper.prototype._validPos = function (pos) {
+  return pos[0] >= 0 && pos[0] < this.dim && pos[1] >= 0 && pos[1] < this.dim;
+};
+
 
 var minesweep = new MineSweeper(10, 10);
-console.log(minesweep.board);
+// console.log(minesweep.board);
 // console.log(minesweep._countBombNeighbors(5,5));
 
 module.exports = MineSweeper;
